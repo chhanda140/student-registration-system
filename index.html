@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Student Registration System - register, edit, delete student records with localStorage persistence." />
+  <title>Student Registration System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Student Registration System</h1>
+    <p class="subtitle">Register students, edit or delete records. Data stored in your browser (localStorage).</p>
+  </header>
+
+  <main class="container">
+    <!-- Form Section -->
+    <section class="form-panel">
+      <h2>Register Student</h2>
+      <form id="student-form" novalidate>
+        <div class="field">
+          <label for="name">Student Name</label>
+          <input id="name" name="name" type="text" placeholder="John Doe" inputmode="text" autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="studentId">Student ID</label>
+          <input id="studentId" name="studentId" type="text" placeholder="12345" inputmode="numeric" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email ID</label>
+          <input id="email" name="email" type="email" placeholder="name@example.com" />
+        </div>
+
+        <div class="field">
+          <label for="contact">Contact Number</label>
+          <input id="contact" name="contact" type="text" placeholder="9876543210" inputmode="numeric" />
+        </div>
+
+        <div class="form-actions">
+          <button id="submit-btn" type="submit">Add Student</button>
+          <button id="clear-btn" type="button" class="secondary">Clear</button>
+        </div>
+
+        <p id="form-message" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- Display Section -->
+    <section class="display-panel">
+      <h2>Registered Students</h2>
+      <div id="table-wrapper" class="table-wrapper">
+        <table id="students-table" aria-describedby="table-desc">
+          <caption id="table-desc" class="visually-hidden">List of registered students</caption>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Student ID</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th class="actions-col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="students-body">
+            <!-- rows inserted by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bottom-actions">
+        <button id="clear-storage" class="danger">Clear All Records</button>
+        <p id="display-message" class="message" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Project: <strong>student-registration-system</strong> — HTML / CSS / JS / README must be separate commits.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
